@@ -1,3 +1,4 @@
+import numpy as np
 def gauss_jordan(A, b):
     """
     Solves the system of linear equations Ax = b using the Gauss-Jordan method.
@@ -38,8 +39,8 @@ def gauss_jordan(A, b):
 
     # Extract the solution from the augmented matrix
     x = [aug_matrix[i][-1] for i in range(n)]
-    
-    return x
+    A_n = np.array(aug_matrix)
+    return x, A_n[:,0:3]
 
 # Example usage
 if __name__ == "__main__":
@@ -50,5 +51,6 @@ if __name__ == "__main__":
     ]
     b = [8, -11, -3]
 
-    solution = gauss_jordan(A, b)
-    print(f"Solution: {solution}")
+    solution,B = gauss_jordan(A, b)
+    print(B)
+    print(f"Roots: {solution}")
