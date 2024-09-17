@@ -88,9 +88,9 @@ def simpsons_three_eighth(f, a, b, n):
 
 # Example usage
 if __name__ == "__main__":
-    f = lambda x: x**2  # Function to integrate
-    a = 0  # Lower limit
-    b = 1  # Upper limit
+    f = lambda x: 1/x  # Function to integrate
+    a = 1  # Lower limit
+    b = 2  # Upper limit
 
     result = trapezoidal(f, a, b)
     print(f"Trapezoidal Rule Result: {result}")
